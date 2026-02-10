@@ -868,8 +868,9 @@
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') prevSlide();
-            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'PageUp' || e.key === 'PageDown') e.preventDefault();
+            if (e.key === 'ArrowLeft' || e.key === 'PageUp') prevSlide();
+            if (e.key === 'ArrowRight' || e.key === 'PageDown') nextSlide();
         });
 
         // Initialize
